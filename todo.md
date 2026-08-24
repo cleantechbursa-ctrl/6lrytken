@@ -1,12 +1,19 @@
 # GLORY — Aşamalı Geliştirme Listesi
 
-- [ ] GitHub token’ının bağlı olduğu hesabı depo sahibiyle karşılaştırmak ve yazma yetkisi uyuşmazlığını gidermek.
-- [ ] Kullanıcı için güvenli GitHub yetkilendirme akışını başlatmak ve bağlantı sonucunu doğrulamak.
-- [ ] Bağlı GitHub deposunu, hedef branch’i ve mevcut dosya durumunu doğrulamak.
-- [ ] `cleantechbursa-ctrl/6lrytken` deposunun varsayılan branch’ini ve GLORY ile birleşme durumunu doğrulamak.
+- [x] Sağlanan resmi GLORY logosunu yayın varlığı olarak hazırlamak ve üst sol marka alanına eklemek.
+- [x] Ana sayfa, whitepaper, 6lory ve admin deneyimlerini masaüstü ve mobilde görsel olarak denetlemek.
+- [x] Tespit edilen marka, içerik, hiyerarşi ve etkileşim eksiklerini mevcut tasarım sistemini koruyarak gidermek.
+- [x] Logo yerleşimi ve genel tasarım iyileştirmelerini responsive ve production build ile doğrulamak.
+- [ ] Tamamlanan GLORY tasarım güncellemesini GitHub `main` branch’ine aktararak Vercel kaynak ağacını yenilemek.
+- [x] GitHub token’ının bağlı olduğu hesabı depo sahibiyle karşılaştırmak ve yazma yetkisi uyuşmazlığını gidermek.
+- [x] Kullanıcı için güvenli GitHub yetkilendirme akışını başlatmak ve bağlantı sonucunu doğrulamak.
+- [x] Bağlı GitHub deposunu, hedef branch’i ve mevcut dosya durumunu doğrulamak.
+- [x] `cleantechbursa-ctrl/6lrytken` deposunun varsayılan branch’ini ve GLORY ile birleşme durumunu doğrulamak.
 - [x] GLORY’nin Vercel serverless girişini, SPA fallback’ini ve dağıtım yapılandırmasını eklemek.
 - [x] Vercel uyumlu production build’i çalıştırmak ve gerekli ortam değişkenlerini belgelemek.
-- [ ] Doğrulanmış Vercel yapılandırmasıyla GitHub deposunu senkronize etmek.
+- [x] Doğrulanmış Vercel yapılandırmasıyla GitHub deposunu senkronize etmek.
+- [x] Bağlı Vercel alan adının senkronize edilen GLORY ana sayfasını başarıyla sunduğunu doğrulamak.
+- [x] Vercel SPA fallback’inin `/whitepaper` ve `/admin` derin bağlantılarını doğru sunduğunu doğrulamak.
 
 - [x] GitHub dışa aktarımındaki kaynak dosyaları, giriş dosyasını ve production build çıktısını denetlemek.
 - [x] Vercel’in build, start, route fallback ve ortam değişkeni gereksinimlerini GLORY projesiyle karşılaştırmak.

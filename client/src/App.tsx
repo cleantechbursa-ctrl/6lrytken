@@ -2,7 +2,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch, useLocation } from "wouter";
+import { Link, Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -11,18 +11,36 @@ import Whitepaper from "./pages/Whitepaper";
 import Admin from "./pages/Admin";
 import { GloryContentProvider } from "./contexts/GloryContentContext";
 import { useGloryContent } from "./contexts/GloryContentContext";
+import { BrandMark } from "./components/glory/Brand";
 
 function PlaceholderProduct() {
   const content = useGloryContent();
   return (
     <div className="glory-site flex min-h-screen flex-col bg-[#0d0d0c] text-[#f4f0e8]">
-      <main className="technical-surface page-threshold prism-adjacent flex flex-1 items-center px-5 py-24 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-2xl">
-          <p className="eyebrow">GLORY ECOSYSTEM / {content.ecosystem.productName.toUpperCase()}</p>
-          <span className="threshold-rule mt-7" aria-hidden="true" />
-          <h1 className="heading-display mt-7 text-5xl sm:text-7xl">{content.ecosystem.productName} is <span className="text-[#c6a66a]">coming soon.</span></h1>
-          <p className="mt-7 text-lg leading-8 text-[#aaa69f]">{content.ecosystem.body}</p>
-          <a href="/" className="glory-text-link mt-10 inline-flex font-mono text-[10px] tracking-[0.14em]">RETURN TO GLORY</a>
+      <header className="border-b border-white/10 bg-[#0d0d0c]/90 px-5 py-4 backdrop-blur-md sm:px-8 lg:px-12">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between">
+          <Link href="/" aria-label="GLORY home"><BrandMark /></Link>
+          <span className="font-mono text-[9px] tracking-[0.15em] text-[#aa9672]">ECOSYSTEM STATUS / PLANNED</span>
+        </div>
+      </header>
+      <main className="technical-surface page-threshold prism-adjacent sixlory-holding flex flex-1 items-center px-5 py-20 sm:px-8 lg:px-12">
+        <div className="mx-auto grid w-full max-w-[1080px] gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+          <div className="max-w-2xl">
+            <p className="eyebrow">GLORY ECOSYSTEM / {content.ecosystem.productName.toUpperCase()}</p>
+            <span className="threshold-rule mt-7" aria-hidden="true" />
+            <h1 className="heading-display mt-7 text-5xl sm:text-7xl">{content.ecosystem.productName} is <span className="text-[#c6a66a]">coming soon.</span></h1>
+            <p className="mt-7 text-lg leading-8 text-[#aaa69f]">{content.ecosystem.body}</p>
+            <div className="mt-10 flex flex-wrap gap-5"><a href="/" className="glory-text-link inline-flex font-mono text-[10px] tracking-[0.14em]">RETURN TO GLORY</a><Link href="/whitepaper" className="glory-text-link inline-flex font-mono text-[10px] tracking-[0.14em]">READ THE WHITEPAPER</Link></div>
+          </div>
+          <aside className="sixlory-signal-panel" aria-label="6lory planned product status">
+            <p className="eyebrow">PRODUCT SIGNAL</p>
+            <div className="mt-6 grid gap-4 divide-y divide-white/10">
+              <div className="flex items-center justify-between pb-4"><span>Layer</span><strong>01 / {content.ecosystem.productName}</strong></div>
+              <div className="flex items-center justify-between py-4"><span>Format</span><strong>Task-based rewards</strong></div>
+              <div className="flex items-center justify-between pt-4"><span>Status</span><strong className="text-[#d8bd81]">Planned</strong></div>
+            </div>
+            <p className="mt-6 text-xs leading-5 text-[#8f8b84]">Product details, eligibility mechanics and live integrations will be announced only when available.</p>
+          </aside>
         </div>
       </main>
     </div>
