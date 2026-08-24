@@ -9,7 +9,7 @@ import { useGloryContent } from "@/contexts/GloryContentContext";
 type BrandMarkProps = { compact?: boolean; className?: string };
 
 /** Absolute host is required because Vercel does not serve Manus storage-relative URLs. */
-export const OFFICIAL_GLORY_WORDMARK_SRC = gloryAsset("glory-official-wordmark_e2592f8d.png");
+export const OFFICIAL_GLORY_WORDMARK_SRC = gloryAsset("glory-header-lockup-wide_498aef18.png");
 
 export function BrandMark({ compact = false, className = "" }: BrandMarkProps) {
   const content = useGloryContent();
