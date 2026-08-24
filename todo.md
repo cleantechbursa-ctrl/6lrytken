@@ -9,6 +9,9 @@
 - [x] Üst-sol resmi GLORY logosunu kırpmasız, erişilebilir ve tüm header genişliklerinde sabit bir yerleşimle düzeltmek.
 - [x] Ana sayfa hero/header bileşenlerini masaüstü ve mobilde taşma, kontrast ve hiyerarşi açısından yeniden doğrulamak.
 - [x] Düzeltmeleri production build, canlı Vercel görünümü ve GitHub `main` senkronizasyonu ile tamamlamak.
+- [ ] Canlı `/admin` yönetici girişinde kimlik bilgilerinin reddedilmesini yeniden üretmek ve ortam bazında ayırmak.
+- [ ] GLORY yönetici sırlarını, sunucusuz giriş endpointini ve güvenli oturum çerezi akışını doğrulayarak hatayı düzeltmek.
+- [ ] Canlı ve geliştirme ortamlarında yetkili yönetici oturumunu, korunan içerik yayınlamayı ve logout akışını doğrulamak.
 - [x] GitHub token’ının bağlı olduğu hesabı depo sahibiyle karşılaştırmak ve yazma yetkisi uyuşmazlığını gidermek.
 - [x] Kullanıcı için güvenli GitHub yetkilendirme akışını başlatmak ve bağlantı sonucunu doğrulamak.
 - [x] Bağlı GitHub deposunu, hedef branch’i ve mevcut dosya durumunu doğrulamak.
