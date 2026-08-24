@@ -12,6 +12,9 @@
 - [x] Canlı `/admin` yönetici girişinde kimlik bilgilerinin reddedilmesini yeniden üretmek ve ortam bazında ayırmak.
 - [x] GLORY yönetici sırlarını, sunucusuz giriş endpointini ve güvenli oturum çerezi akışını doğrulayarak hatayı düzeltmek.
 - [ ] Vercel `DATABASE_URL` eklendikten sonra canlı yönetici oturumunda `SAVE & PUBLISH` kalıcılığını ve logout akışını doğrulamak.
+- [ ] Canlı Control Room `SAVE & PUBLISH` isteğinin hata yanıtını ve public içerik yansımasını yeniden üretmek.
+- [ ] Vercel yayın kalıcılığı için eksik veritabanı yapılandırmasını veya fallback yayın mekanizmasını uygulamak.
+- [ ] Canlı yönetici değişikliğinin homepage ve whitepaper’a kalıcı yansımasını uçtan uca doğrulamak.
 - [x] GitHub token’ının bağlı olduğu hesabı depo sahibiyle karşılaştırmak ve yazma yetkisi uyuşmazlığını gidermek.
 - [x] Kullanıcı için güvenli GitHub yetkilendirme akışını başlatmak ve bağlantı sonucunu doğrulamak.
 - [x] Bağlı GitHub deposunu, hedef branch’i ve mevcut dosya durumunu doğrulamak.
