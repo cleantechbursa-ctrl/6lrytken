@@ -10,7 +10,13 @@ The live API function is not being served under `/api/*`. This is a deployment-r
 
 ## Required correction
 
-The project needs a recognized root Express entry such as `server.ts` that default-exports the Express application, then needs Vercel rewrites that preserve `/api/*` and route public SPA paths to `index.html`. The existing local-admin router, timing-safe credential comparison, secure HTTP-only session cookie and tRPC procedure should remain unchanged.
+The deployed correction adds an explicit `api/trpc/[...trpc].ts` Vercel function and changes the administrator tRPC dependency graph to explicit relative Node ESM `.js` specifiers. This avoids Vercel’s unsupported `server/routers` directory import and its unsupported TypeScript path aliases. The existing local-admin router, timing-safe credential comparison, secure HTTP-only session cookie and tRPC procedure remain unchanged.
+
+## Resolution verification
+
+After the final GitHub/Vercel deployment, `POST /api/trpc/adminAuth.login?batch=1` returns HTTP 200 for the protected configured administrator account and issues an HTTP-only, Secure `glory_admin_session` cookie. The same credentials were submitted in the live browser; the GLORY Control Room rendered successfully with the authenticated administrator profile and content-management controls.
+
+`DATABASE_URL` remains the only Vercel variable not configured in Production. It is not needed for sign-in, but must be added before the Control Room can persist a future `SAVE & PUBLISH` change across deployments.
 
 ## External references
 
