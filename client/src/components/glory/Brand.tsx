@@ -3,11 +3,13 @@ import { type ReactNode } from "react";
 import { Check, Copy, ExternalLink } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { gloryAsset } from "@/const";
 import { useGloryContent } from "@/contexts/GloryContentContext";
 
 type BrandMarkProps = { compact?: boolean; className?: string };
 
-export const OFFICIAL_GLORY_WORDMARK_SRC = "/manus-storage/glory-official-wordmark_e2592f8d.png";
+/** Absolute host is required because Vercel does not serve Manus storage-relative URLs. */
+export const OFFICIAL_GLORY_WORDMARK_SRC = gloryAsset("glory-official-wordmark_e2592f8d.png");
 
 export function BrandMark({ compact = false, className = "" }: BrandMarkProps) {
   const content = useGloryContent();

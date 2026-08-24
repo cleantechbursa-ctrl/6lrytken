@@ -5,6 +5,10 @@
 - [x] Tespit edilen marka, içerik, hiyerarşi ve etkileşim eksiklerini mevcut tasarım sistemini koruyarak gidermek.
 - [x] Logo yerleşimi ve genel tasarım iyileştirmelerini responsive ve production build ile doğrulamak.
 - [x] Tamamlanan GLORY tasarım güncellemesini GitHub `main` branch’ine aktararak Vercel kaynak ağacını yenilemek.
+- [ ] Canlı ana sayfadaki üst-sol marka alanı kırpılmasını masaüstü ve mobilde yeniden üretip kök nedenini belirlemek.
+- [ ] Üst-sol resmi GLORY logosunu kırpmasız, erişilebilir ve tüm header genişliklerinde sabit bir yerleşimle düzeltmek.
+- [ ] Ana sayfa hero/header bileşenlerini masaüstü ve mobilde taşma, kontrast ve hiyerarşi açısından yeniden doğrulamak.
+- [ ] Düzeltmeleri production build, canlı Vercel görünümü ve GitHub `main` senkronizasyonu ile tamamlamak.
 - [x] GitHub token’ının bağlı olduğu hesabı depo sahibiyle karşılaştırmak ve yazma yetkisi uyuşmazlığını gidermek.
 - [x] Kullanıcı için güvenli GitHub yetkilendirme akışını başlatmak ve bağlantı sonucunu doğrulamak.
 - [x] Bağlı GitHub deposunu, hedef branch’i ve mevcut dosya durumunu doğrulamak.
