@@ -1,9 +1,9 @@
-import { COOKIE_NAME } from "@shared/const";
-import { getSessionCookieOptions } from "./_core/cookies";
-import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
-import { gloryRouter } from "./routers/glory";
-import { clearLocalAdminCookie, createLocalAdminSession, localAdminCredentialsAreValid, localAdminUser, setLocalAdminCookie } from "./localAdmin";
+import { COOKIE_NAME } from "../shared/const.js";
+import { getSessionCookieOptions } from "./_core/cookies.js";
+import { systemRouter } from "./_core/systemRouter.js";
+import { publicProcedure, router } from "./_core/trpc.js";
+import { gloryRouter } from "./routers/glory.js";
+import { clearLocalAdminCookie, createLocalAdminSession, localAdminCredentialsAreValid, localAdminUser, setLocalAdminCookie } from "./localAdmin.js";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 

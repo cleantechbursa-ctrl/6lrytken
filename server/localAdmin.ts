@@ -2,8 +2,8 @@
 import { timingSafeEqual } from "node:crypto";
 import { SignJWT, jwtVerify } from "jose";
 import { parse } from "cookie";
-import type { User } from "../drizzle/schema";
-import { isConfiguredAdminEmail } from "./adminAccess";
+import type { User } from "../drizzle/schema.js";
+import { isConfiguredAdminEmail } from "./adminAccess.js";
 
 export const LOCAL_ADMIN_COOKIE = "glory_admin_session";
 const SESSION_SECONDS = 60 * 60 * 12;

@@ -5,8 +5,8 @@ const vercelTrpcEntry = readFileSync(new URL("../api/trpc/[...trpc].ts", import.
 
 describe("GLORY Vercel tRPC entry", () => {
   it("exposes the application router and request context through an explicit API catch-all", () => {
-    expect(vercelTrpcEntry).toContain('import { appRouter } from "../../server/routers.ts"');
-    expect(vercelTrpcEntry).toContain('import { createContext } from "../../server/_core/context.ts"');
+    expect(vercelTrpcEntry).toContain('import { appRouter } from "../../server/routers.js"');
+    expect(vercelTrpcEntry).toContain('import { createContext } from "../../server/_core/context.js"');
     expect(vercelTrpcEntry).toContain("createExpressMiddleware({");
     expect(vercelTrpcEntry).toContain("export default app;");
   });

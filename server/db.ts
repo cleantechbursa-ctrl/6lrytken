@@ -1,9 +1,9 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { glorySiteContent, InsertUser, users } from "../drizzle/schema";
-import { ENV } from './_core/env';
-import { isConfiguredAdminEmail } from "./adminAccess";
-import type { GloryContent } from "../shared/gloryContent";
+import { glorySiteContent, InsertUser, users } from "../drizzle/schema.js";
+import { ENV } from './_core/env.js';
+import { isConfiguredAdminEmail } from "./adminAccess.js";
+import type { GloryContent } from "../shared/gloryContent.js";
 
 let _db: ReturnType<typeof drizzle> | null = null;
 

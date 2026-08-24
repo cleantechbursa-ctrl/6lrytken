@@ -1,7 +1,7 @@
 /** GLORY public-content and administrator control procedures. */
-import { cloneDefaultGloryContent, gloryContentSchema } from "@shared/gloryContent";
-import { adminProcedure, publicProcedure, router } from "../_core/trpc";
-import { getGlorySiteContent, saveGlorySiteContent } from "../db";
+import { cloneDefaultGloryContent, gloryContentSchema } from "../../shared/gloryContent.js";
+import { adminProcedure, publicProcedure, router } from "../_core/trpc.js";
+import { getGlorySiteContent, saveGlorySiteContent } from "../db.js";
 
 export const gloryRouter = router({
   get: publicProcedure.query(async () => {
