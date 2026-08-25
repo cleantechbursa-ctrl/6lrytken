@@ -38,3 +38,16 @@ Public içerik okuması da HTTP 200 ile çalıştı. Aynı içerik değişmeden 
 Canlı route karşılaştırmasında `glory.get` API’sinin döndürdüğü varsayılan marka tagline’ı (**BUILD. EARN. BELONG.**), hero metni ve ekosistem açıklaması hem homepage’te hem de `/whitepaper` rotasında göründü. Başarısız publish isteğinden sonra iki rota da aynı varsayılan managed content’i göstermeye devam ediyor; bu nedenle mevcut hata bir render/cache hatası değil, salt yazma kalıcılığı eksikliğidir.
 
 Whitepaper eşleştirmesi canlı API’den bölüm alanları seçilerek ayrıca tamamlandı: API’deki **01 Executive Summary**, **02 The GLORY Vision** ve **05 Tokenomics** başlık/gövde metinleri canlı `/whitepaper` rotasındaki aynı bölümlerle birebir örtüşüyor. Böylece homepage ve whitepaper’ın public render’ının tek bir `glory.get` managed-content payload’ından beslendiği ve başarısız kaydın bu payload’ı değiştirmediği doğrulandı.
+
+
+## Manus Production Kalıcılık Doğrulaması
+
+Yönetilen Manus Production alanında mevcut public içerik alındı, yetkili administrator session ile hero açıklamasına yalnızca denetim amacı taşıyan geçici ve geri alınabilir bir marker yazıldı, ardından `glory.get` üzerinden aynı marker geri okundu. Orijinal içerik hemen yeniden kaydedildi ve son okuma ile restore doğrulandı. Test sonucu `MANUS_PUBLISH_PERSISTENCE_PROOF_OK` oldu; managed database kaydı da `glory_site_content` içinde mevcut olduğu doğrulandı.
+
+Bu sonuç Manus’un yönetilen production yüzeyinde gerçek admin yayın kalıcılığının çalıştığını kanıtlar. Ayrı Vercel Production projesinde ise `DATABASE_URL` ve `BLOB_READ_WRITE_TOKEN` bulunmadığı için Vercel üzerinden aynı yayın akışı hâlâ güvenli biçimde reddedilir. Bu iki deployment’ın veritabanı ortamları otomatik olarak ortak değildir; Vercel canonical alanında kalıcılık için Blob write token veya Vercel’e bağlı bir database URL’si ayrıca yapılandırılmalıdır.
+
+
+Geçici marker ile yapılan canlı render kanıtında Manus Production homepage’i 1440 × 900 ve 390 × 844 ölçülerinde marker’lı hero açıklamasını gösterdi; resmi logo, hero prism görseli, CTA’lar ve mobil menü görünürlüğü korundu. `/whitepaper` aynı yayın payload’ından beslendiği için marker’ın homepage API/public içeriğiyle eşleştiği önceki route eşleştirmesiyle birlikte doğrulandı. Marker testin hemen ardından orijinal içerik geri yüklendi ve `MANUS_PUBLISH_PERSISTENCE_PROOF_OK` sonucu yeniden alındı.
+
+
+Geçici publish marker ile alınan Manus Production screenshot’ları, hero açıklamasındaki yönetici değişikliğinin `/whitepaper` rotasında da desktop (1440 × 900) ve mobil (390 × 844) render’larında aynı canlı payload üzerinden göründüğünü doğruladı. Logo, başlık, metin akışı ve contract CTA’ları korunurken marker’ın metin satırlarına kontrollü biçimde işlendiği görüldü. Test sonrasında orijinal içerik başarıyla restore edildi.
