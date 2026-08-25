@@ -60,3 +60,13 @@ Public source: [BscScan contract page](https://bscscan.com/address/0xC7717427b4f
 - Critical launch files were all present remotely: `package.json`, `pnpm-lock.yaml`, `client/index.html`, `client/src/App.tsx`, `client/src/pages/Home.tsx`, `server/db.ts`, `server/routers.ts`, `api/[...path].ts`, `api/trpc/[...trpc].ts`, `vercel.json`, `VERCEL_SETUP.md`, `todo.md`, `persistence-session-audit.md` and `verification-notes.md`.
 - Local `pnpm test`, `pnpm check` and `pnpm build` passed. The build produced `dist/public` and the server bundle required by the committed Vercel configuration.
 - Vercel Production deployment `dpl_GuZTDYRurs1Rj5NDTtCznoy3LUGT` reached `READY` and reported the same GitHub SHA `ecedff1f3a2669d1e12fb2c63e1bdcec0d223cf9`. The live `/`, `/whitepaper`, `/6lory` and `/admin` routes rendered successfully; the Vercel runtime error query returned no errors for the previous 24 hours.
+
+## Social Destination Management
+
+**Checked:** 25 August 2026
+
+- The Control Room Topluluk tab now presents dedicated X / Twitter, Telegram and Discord URL cards with examples, platform-specific HTTPS guidance and an explicit empty-field explanation.
+- The shared content schema accepts empty values or official HTTPS destinations only: `x.com` / `twitter.com`, `t.me` / `telegram.me`, and `discord.gg` / `discord.com`. Unsupported domains and HTTP URLs are rejected before publication.
+- The existing full-document `glory.save` persistence path carries the social fields into MySQL or Vercel Blob without a separate migration. An admin-positive router test confirms valid social destinations are passed to the persistence helper, while the non-admin rejection remains covered.
+- Public CommunitySection rendering was tested with all three official URLs and with empty defaults. Official destinations render as `target="_blank"` links with `rel="noopener noreferrer"`; empty destinations remain non-linking “Coming Soon” cards.
+- Control Room Community UI was visually checked at desktop and 390px mobile widths; the horizontal category rail remains contained and the three social cards are arranged responsively. Final validation passed with 10 Vitest files / 19 tests, TypeScript and Vercel production build.
