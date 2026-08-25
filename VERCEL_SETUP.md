@@ -10,7 +10,8 @@ Configure these values in **Vercel → Project Settings → Environment Variable
 
 | Variable | Purpose |
 | --- | --- |
-| `DATABASE_URL` | Persistent GLORY content and user data. |
+| `DATABASE_URL` | Persistent GLORY content and user data when a managed MySQL database is connected. |
+| `BLOB_READ_WRITE_TOKEN` | Required fallback for persistent managed GLORY content when `DATABASE_URL` is not available; the app writes `glory/site-content.json` with overwrite enabled. |
 | `JWT_SECRET` | Signs server-side GLORY administrator sessions. |
 | `GLORY_ADMIN_EMAIL` | Authorized Control Room username. |
 | `GLORY_ADMIN_PASSWORD` | Authorized Control Room password. |
@@ -19,4 +20,4 @@ The legacy Manus OAuth fields (`VITE_APP_ID`, `VITE_OAUTH_PORTAL_URL`, `OAUTH_SE
 
 ## Post-deploy check
 
-After Vercel redeploys, open `/`, `/whitepaper`, and `/admin`. Confirm that the administrator can sign in and save without a database or API error.
+After Vercel redeploys, open `/`, `/whitepaper`, and `/admin`. Confirm that the administrator can sign in, publish a reversible marker, read it on both public routes, and restore the official content. If `DATABASE_URL` is absent, confirm that `BLOB_READ_WRITE_TOKEN` is configured in the Production environment before testing persistence.
