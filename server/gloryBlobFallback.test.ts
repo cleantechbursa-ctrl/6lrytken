@@ -9,6 +9,7 @@ describe("GLORY Vercel Blob content fallback", () => {
     expect(dbSource).toContain('const GLORY_CONTENT_BLOB_PATH = "glory/site-content.json"');
     expect(dbSource).toContain("process.env.BLOB_READ_WRITE_TOKEN");
     expect(dbSource).toContain("await saveGloryContentToBlob(content, updatedBy)");
+    expect(dbSource).toContain("allowOverwrite: true");
     expect(dbSource).toContain("return readGloryContentFromBlob()");
   });
 });
