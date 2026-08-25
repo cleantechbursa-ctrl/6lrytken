@@ -32,7 +32,7 @@
 - [x] Vercel ortam değişkenleri, MySQL/Blob kalıcılık tercihi ve `glory.save` yayın API’sini uçtan uca denetlemek.
 - [x] Yönetici giriş bilgisi doğrulaması, rol yetkisi, güvenli oturum çerezi ve logout akışını yeniden denetlemek.
 - [x] Denetim bulgularını belgeleyip yönetici girişine başarısız deneme sınırı eklemek.
-- [ ] Vercel `BLOB_READ_WRITE_TOKEN` eklendiğinde canlı `SAVE & PUBLISH` kalıcılığını homepage ve whitepaper üzerinde uçtan uca doğrulamak.
+- [x] Vercel `BLOB_READ_WRITE_TOKEN` eklendiğinde canlı `SAVE & PUBLISH` kalıcılığını homepage ve whitepaper üzerinde uçtan uca doğrulamak.
 - [x] Vercel OAuth bağlantısının mevcut araç kapsamıyla Blob token’ını Production ortamına ekleyebileceği onaysız yolu doğrulamak ve gizli-değer maskelemesini geri kapatmak.
 - [x] Veritabanı/Blob kalıcılık ve yönetici oturum açma akışının canlı/yerel denetim bulgularını belgelemek.
 - [x] Yönetici girişine başarısız deneme sınırı eklemek ve unit test ile güvenceye almak.
@@ -79,10 +79,23 @@
 - [x] Navbar ve footer’daki tüm birincil linkleri tek final turda link bazında route/hash sonucu ile kaydetmek; iki Whitepaper bağlantısını açıkça doğrulamak.
 - [x] `/`, `/whitepaper` ve `/admin` rotalarında görünen title/meta davranışını doğrulamak ve notlara kaydetmek.
 - [x] Mevcut uygulamanın route-bazlı metadata yaklaşımını koddan doğrulamak; gerekli route-meta çözümü eklendi ve test edildi.
-- [ ] Kullanıcının yetkilendirmesiyle Vercel Blob deposunu `glorytoken` projesine güvenli yazma token’ı ile bağlamak.
-- [ ] Bağlı Blob depolaması üzerinden canlı `SAVE & PUBLISH` kalıcılığını ana sayfa ve whitepaper’da geri dönüşümlü kontrol işaretiyle doğrulamak.
-- [ ] Kullanıcının eksiksiz teslim talebi için kalıcı admin yayın akışını çözmek, canlı değişiklik ile geri okuma kanıtını oluşturmak ve son teslim checkpoint’ini kaydetmek.
-- [ ] Manus Production veritabanındaki kanıtlanmış kalıcılığın Vercel canonical alanına güvenli biçimde taşınıp taşınamayacağını doğrulamak; mümkün değilse Blob tokenı engelini son teslim kaydında açıkça korumak.
-- [ ] Manus Production’da geçici yönetici marker’ını homepage ve `/whitepaper` render’ında görüntüleyip ardından orijinal içeriği geri yüklemek.
-- [ ] Yetkili Vercel bağlantısıyla Blob mağazasını doğrudan `glorytoken` Production projesine bağlamayı ve `BLOB_READ_WRITE_TOKEN` oluşumunu denemek.
-- [ ] Vercel Blob token sonrası `glory.save` restore isteğindeki HTTP 500 hatasını teşhis edip canlı içeriği güvenli biçimde eski haline getirmek.
+- [x] Kullanıcının yetkilendirmesiyle Vercel Blob deposunu `glorytoken` projesine güvenli yazma token’ı ile bağlamak.
+- [x] Bağlı Blob depolaması üzerinden canlı `SAVE & PUBLISH` kalıcılığını ana sayfa ve whitepaper’da geri dönüşümlü kontrol işaretiyle doğrulamak.
+- [x] Kullanıcının eksiksiz teslim talebi için kalıcı admin yayın akışını çözmek, canlı değişiklik ile geri okuma kanıtını oluşturmak ve son teslim checkpoint’ini kaydetmek.
+- [x] Manus Production veritabanındaki kanıtlanmış kalıcılığın Vercel canonical alanına güvenli biçimde taşınıp taşınamayacağını doğrulamak; mümkün değilse Blob tokenı engelini son teslim kaydında açıkça korumak.
+- [x] Manus Production’da geçici yönetici marker’ını homepage ve `/whitepaper` render’ında görüntüleyip ardından orijinal içeriği geri yüklemek.
+- [x] Yetkili Vercel bağlantısıyla Blob mağazasını doğrudan `glorytoken` Production projesine bağlamayı ve `BLOB_READ_WRITE_TOKEN` oluşumunu denemek.
+- [x] Vercel Blob token sonrası `glory.save` restore isteğindeki HTTP 500 hatasını teşhis edip canlı içeriği güvenli biçimde eski haline getirmek.
+- [x] Vercel Production’da geçici publish marker’ı kaydedip marker’ın `/whitepaper` rotasında da göründüğünü kanıtlamak; ardından içeriği restore edip iki rotada da marker’ın kalktığını doğrulamak.
+- [x] Canlı Vercel Blob persistence çözümünü ve Manus/Vercel persistence ayrımını güncel audit notuna eklemek.
+- [x] Kalıcı admin yayın akışının tamamlandığını belgeleyen yeni final checkpoint kaydı oluşturmak.
+- [x] Canlı Vercel Blob publish/restore kanıtı ve audit güncellemesini özetleyen yeni bir final checkpoint kaydı oluşturmak ve başarı çıktısını doğrulamak.
+
+## Yayın Öncesi GitHub Kontrolü — 25 Ağustos 2026
+
+- [ ] GitHub `main` dosya ağacını yerel proje ile karşılaştırmak ve eksik dosya/klasörleri tespit etmek.
+- [ ] GitHub `main` üzerinde `package.json`, `vercel.json`, giriş dosyaları, serverless API ve SPA fallback yapılandırmasını denetlemek.
+- [ ] Yerel test, TypeScript ve production build kontrollerini yeniden çalıştırmak.
+- [ ] GitHub commit SHA’sını Vercel Production deployment ile eşleştirmek ve canlı `/`, `/whitepaper`, `/6lory` ve `/admin` rotalarını kontrol etmek.
+- [ ] Tespit edilen farkları GitHub `main`e senkronize etmek ve son yayın öncesi dosya bütünlüğünü belgelemek.
+- [ ] GitHub yayın öncesi denetim sonucunu yeni checkpoint ile kaydetmek.
