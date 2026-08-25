@@ -98,4 +98,19 @@
 - [x] Yerel test, TypeScript ve production build kontrollerini yeniden çalıştırmak.
 - [x] GitHub commit SHA’sını Vercel Production deployment ile eşleştirmek ve canlı `/`, `/whitepaper`, `/6lory` ve `/admin` rotalarını kontrol etmek.
 - [x] Tespit edilen farkları GitHub `main`e senkronize etmek ve son yayın öncesi dosya bütünlüğünü belgelemek.
-- [ ] GitHub yayın öncesi denetim sonucunu yeni checkpoint ile kaydetmek.
+- [x] GitHub yayın öncesi denetim sonucunu yeni checkpoint ile kaydetmek.
+
+## Sosyal Bağlantı Yönetimi — 25 Ağustos 2026
+
+- [x] X, Telegram ve Discord alanlarını yönetim panelinde açık açıklamalar, örnek formatlar ve boş durum davranışıyla sunmak.
+- [x] Sosyal URL’ler için platforma özgü HTTPS/domain doğrulamasını içerik şemasında uygulamak.
+- [x] Kaydedilen resmi sosyal URL’leri public community bölümünde güvenli yeni sekme bağlantısı olarak göstermek; boş alanları “Coming Soon” olarak korumak.
+- [x] Sosyal bağlantı şeması, yetkili yayın ve URL reddi için Vitest testleri eklemek.
+- [x] Admin ve public community alanlarını masaüstü/mobilde doğrulamak; TypeScript, test ve production build kontrollerini çalıştırmak.
+- [ ] Sosyal bağlantı özelliğini yeni checkpoint ile kaydetmek.
+
+## Sosyal Bağlantı Doğrulama Tamamlama — 25 Ağustos 2026
+
+- [ ] Geçerli X, Telegram ve Discord URL’leriyle admin `glory.save` mutation’ının pozitif başarı testini eklemek.
+- [ ] Public community bölümünü sosyal linkli ve boş durumlarıyla masaüstü/mobil viewport’larda doğrudan doğrulamak.
+- [ ] Sosyal bağlantı doğrulamalarını tamamlayan yeni checkpoint oluşturmak.
