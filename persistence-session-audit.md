@@ -51,3 +51,13 @@ Geçici marker ile yapılan canlı render kanıtında Manus Production homepage�
 
 
 Geçici publish marker ile alınan Manus Production screenshot’ları, hero açıklamasındaki yönetici değişikliğinin `/whitepaper` rotasında da desktop (1440 × 900) ve mobil (390 × 844) render’larında aynı canlı payload üzerinden göründüğünü doğruladı. Logo, başlık, metin akışı ve contract CTA’ları korunurken marker’ın metin satırlarına kontrollü biçimde işlendiği görüldü. Test sonrasında orijinal içerik başarıyla restore edildi.
+
+## Vercel Production Sonuç Güncellemesi
+
+**Güncelleme zamanı:** 25 Ağustos 2026 (GMT+3)
+
+Vercel `glorytoken` Production projesinde `BLOB_READ_WRITE_TOKEN` etkinleştirildikten sonra Blob fallback’in singleton kaydı için `allowOverwrite: true` eklendi. Böylece `glory/site-content.json` aynı sabit anahtarla güvenli biçimde güncellenebiliyor; önceki HTTP 500 yazma hatasının nedeni giderildi.
+
+Yetkili Control Room oturumu ile `SAVE & PUBLISH` kullanılarak önce `GLORY WHITEPAPER CHECK` marker’ı yayımlandı. Taze Production isteklerinde marker hem ana sayfada hem de `/whitepaper` rotasında geri okundu. Ardından varsayılan GLORY taslağı geri yüklenip yeniden yayımlandı; taze isteklerde iki rotada da resmi **GLORY** marka adı ve **GLRY** bilgisi göründü, marker kaldırıldı. Bu sonuç `VERCEL_BLOB_PERSISTENCE_PROOF_OK` olarak kayda geçirildi.
+
+Manus Production’daki MySQL/Drizzle kalıcılığı ile Vercel Production’daki Blob fallback birbirinden bağımsız persistence yüzeyleridir. Vercel artık kendi Blob token’ı üzerinden kalıcı yayın yapmaktadır; Manus veritabanı otomatik olarak Vercel’e taşınmamış, iki ortamın veri sahipliği ayrımı korunmuştur.
