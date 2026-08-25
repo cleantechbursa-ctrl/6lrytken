@@ -85,3 +85,4 @@
 - [ ] Manus Production veritabanındaki kanıtlanmış kalıcılığın Vercel canonical alanına güvenli biçimde taşınıp taşınamayacağını doğrulamak; mümkün değilse Blob tokenı engelini son teslim kaydında açıkça korumak.
 - [ ] Manus Production’da geçici yönetici marker’ını homepage ve `/whitepaper` render’ında görüntüleyip ardından orijinal içeriği geri yüklemek.
 - [ ] Yetkili Vercel bağlantısıyla Blob mağazasını doğrudan `glorytoken` Production projesine bağlamayı ve `BLOB_READ_WRITE_TOKEN` oluşumunu denemek.
+- [ ] Vercel Blob token sonrası `glory.save` restore isteğindeki HTTP 500 hatasını teşhis edip canlı içeriği güvenli biçimde eski haline getirmek.
