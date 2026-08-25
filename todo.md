@@ -12,6 +12,7 @@
 - [x] Ana sayfa, whitepaper, 6lory ve Control Room’u mobil tam sayfa denetiminden geçirerek logo, içerik görselleri, taşma ve dokunma alanlarını doğrulamak.
 - [x] Canlı `glorytoken.vercel.app` domaininde desktop ve mobil görsel doğrulama ile sol üst logonun görünürlüğünü kayıt altına almak.
 - [x] Canlı mobil menü tetikleyicisi ve ana CTA dokunma hedeflerini etkileşimli olarak kontrol edip sonucu belgelemek.
+- [x] Header resmi wordmark yüklenirken boş marka kutusu görünmesini engelleyen anlık görünür fallback’i uygulamak ve doğrulamak.
 - [x] Ana sayfa hero/header bileşenlerini masaüstü ve mobilde taşma, kontrast ve hiyerarşi açısından yeniden doğrulamak.
 - [x] Düzeltmeleri production build, canlı Vercel görünümü ve GitHub `main` senkronizasyonu ile tamamlamak.
 - [x] Canlı `/admin` yönetici girişinde kimlik bilgilerinin reddedilmesini yeniden üretmek ve ortam bazında ayırmak.

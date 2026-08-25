@@ -14,23 +14,27 @@ export const OFFICIAL_GLORY_WORDMARK_SRC = gloryAsset("glory-header-lockup-wide_
 export function BrandMark({ compact = false, className = "" }: BrandMarkProps) {
   const content = useGloryContent();
   const [wordmarkLoadFailed, setWordmarkLoadFailed] = useState(false);
+  const [wordmarkLoaded, setWordmarkLoaded] = useState(false);
   return (
     <div className={`glory-brand-lockup ${compact ? "glory-brand-lockup-compact" : ""} ${className}`} aria-label={content.brand.name}>
       <span className="glory-official-wordmark">
+        <span className="glory-wordmark-fallback" aria-hidden={!wordmarkLoadFailed}>
+          <strong>{content.brand.name}</strong>
+          <small>{content.brand.tagline}</small>
+        </span>
         {wordmarkLoadFailed ? (
-          <span className="glory-wordmark-fallback" aria-label={`${content.brand.name} — ${content.brand.tagline}`}>
-            <strong>{content.brand.name}</strong>
-            <small>{content.brand.tagline}</small>
-          </span>
+          null
         ) : (
           <img
             src={OFFICIAL_GLORY_WORDMARK_SRC}
             alt={`${content.brand.name} — ${content.brand.tagline}`}
+            className={wordmarkLoaded ? "glory-wordmark-image-ready" : ""}
             width={168}
             height={42}
             loading="eager"
             fetchPriority="high"
             decoding="async"
+            onLoad={() => setWordmarkLoaded(true)}
             onError={() => setWordmarkLoadFailed(true)}
           />
         )}

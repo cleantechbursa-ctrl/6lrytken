@@ -7,9 +7,12 @@ const styles = readFileSync(new URL("../client/src/index.css", import.meta.url),
 describe("GLORY official header lockup", () => {
   it("keeps a visible text fallback if the external official wordmark cannot load", () => {
     expect(brandSource).toContain("wordmarkLoadFailed");
+    expect(brandSource).toContain("wordmarkLoaded");
+    expect(brandSource).toContain("onLoad={() => setWordmarkLoaded(true)}");
     expect(brandSource).toContain("onError={() => setWordmarkLoadFailed(true)}");
     expect(brandSource).toContain("glory-wordmark-fallback");
     expect(styles).toContain(".glory-wordmark-fallback");
+    expect(styles).toContain("img.glory-wordmark-image-ready { opacity: 1; }");
   });
 
   it("prioritizes the above-the-fold official wordmark without losing a fixed layout", () => {
