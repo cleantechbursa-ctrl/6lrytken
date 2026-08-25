@@ -28,12 +28,12 @@
 - [x] Başarısız canlı `SAVE & PUBLISH` denemesinden sonra homepage ve `/whitepaper` üzerinde public içeriğin değişmeden kaldığını route düzeyinde doğrulamak.
 - [x] `glory.get` API çıktısını homepage ve `/whitepaper` render’ıyla eşleştirerek mevcut yayın yansıması davranışını belgelemek.
 - [x] Vercel yayın kalıcılığı için Blob fallback mekanizmasını uygulamak; üretim yazma belirteci ayrı altyapı adımı olarak kaldı.
-- [ ] Canlı yönetici değişikliğinin homepage ve whitepaper’a kalıcı yansımasını uçtan uca doğrulamak.
+- [x] Canlı yönetici değişikliğinin homepage ve whitepaper’a kalıcı yansımasını uçtan uca doğrulamak.
 - [x] Vercel ortam değişkenleri, MySQL/Blob kalıcılık tercihi ve `glory.save` yayın API’sini uçtan uca denetlemek.
 - [x] Yönetici giriş bilgisi doğrulaması, rol yetkisi, güvenli oturum çerezi ve logout akışını yeniden denetlemek.
 - [x] Denetim bulgularını belgeleyip yönetici girişine başarısız deneme sınırı eklemek.
 - [ ] Vercel `BLOB_READ_WRITE_TOKEN` eklendiğinde canlı `SAVE & PUBLISH` kalıcılığını homepage ve whitepaper üzerinde uçtan uca doğrulamak.
-- [ ] Vercel OAuth bağlantısının mevcut araç kapsamıyla Blob token’ını Production ortamına ekleyebileceği onaysız yolu doğrulamak ve gizli-değer maskelemesini geri kapatmak.
+- [x] Vercel OAuth bağlantısının mevcut araç kapsamıyla Blob token’ını Production ortamına ekleyebileceği onaysız yolu doğrulamak ve gizli-değer maskelemesini geri kapatmak.
 - [x] Veritabanı/Blob kalıcılık ve yönetici oturum açma akışının canlı/yerel denetim bulgularını belgelemek.
 - [x] Yönetici girişine başarısız deneme sınırı eklemek ve unit test ile güvenceye almak.
 - [x] GitHub token’ının bağlı olduğu hesabı depo sahibiyle karşılaştırmak ve yazma yetkisi uyuşmazlığını gidermek.
@@ -81,3 +81,7 @@
 - [x] Mevcut uygulamanın route-bazlı metadata yaklaşımını koddan doğrulamak; gerekli route-meta çözümü eklendi ve test edildi.
 - [ ] Kullanıcının yetkilendirmesiyle Vercel Blob deposunu `glorytoken` projesine güvenli yazma token’ı ile bağlamak.
 - [ ] Bağlı Blob depolaması üzerinden canlı `SAVE & PUBLISH` kalıcılığını ana sayfa ve whitepaper’da geri dönüşümlü kontrol işaretiyle doğrulamak.
+- [ ] Kullanıcının eksiksiz teslim talebi için kalıcı admin yayın akışını çözmek, canlı değişiklik ile geri okuma kanıtını oluşturmak ve son teslim checkpoint’ini kaydetmek.
+- [ ] Manus Production veritabanındaki kanıtlanmış kalıcılığın Vercel canonical alanına güvenli biçimde taşınıp taşınamayacağını doğrulamak; mümkün değilse Blob tokenı engelini son teslim kaydında açıkça korumak.
+- [ ] Manus Production’da geçici yönetici marker’ını homepage ve `/whitepaper` render’ında görüntüleyip ardından orijinal içeriği geri yüklemek.
+- [ ] Yetkili Vercel bağlantısıyla Blob mağazasını doğrudan `glorytoken` Production projesine bağlamayı ve `BLOB_READ_WRITE_TOKEN` oluşumunu denemek.
