@@ -7,6 +7,44 @@ import { isConfiguredAdminEmail } from "./adminAccess.js";
 
 export const LOCAL_ADMIN_COOKIE = "glory_admin_session";
 const SESSION_SECONDS = 60 * 60 * 12;
+const LOGIN_WINDOW_MS = 15 * 60 * 1_000;
+const MAX_FAILED_LOGIN_ATTEMPTS = 5;
+const failedLoginAttempts = new Map<string, { count: number; resetAt: number }>();
+
+function normalizeClientIdentifier(value: string | string[] | undefined) {
+  const raw = Array.isArray(value) ? value[0] : value;
+  return raw?.split(",")[0]?.trim() || "unknown";
+}
+
+export function localAdminLoginRateLimitKey(headers: { [key: string]: string | string[] | undefined }) {
+  return normalizeClientIdentifier(headers["x-forwarded-for"]);
+}
+
+export function localAdminLoginIsRateLimited(key: string, now = Date.now()) {
+  const state = failedLoginAttempts.get(key);
+  if (!state) return false;
+  if (state.resetAt <= now) {
+    failedLoginAttempts.delete(key);
+    return false;
+  }
+  return state.count >= MAX_FAILED_LOGIN_ATTEMPTS;
+}
+
+export function recordLocalAdminLoginFailure(key: string, now = Date.now()) {
+  const previous = failedLoginAttempts.get(key);
+  const state = !previous || previous.resetAt <= now
+    ? { count: 1, resetAt: now + LOGIN_WINDOW_MS }
+    : { ...previous, count: previous.count + 1 };
+  failedLoginAttempts.set(key, state);
+}
+
+export function clearLocalAdminLoginFailures(key: string) {
+  failedLoginAttempts.delete(key);
+}
+
+export function resetLocalAdminLoginRateLimitsForTests() {
+  failedLoginAttempts.clear();
+}
 
 function signingKey() {
   const secret = process.env.JWT_SECRET;

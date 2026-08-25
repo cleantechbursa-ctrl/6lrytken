@@ -15,6 +15,11 @@
 - [ ] Canlı Control Room `SAVE & PUBLISH` isteğinin hata yanıtını ve public içerik yansımasını yeniden üretmek.
 - [ ] Vercel yayın kalıcılığı için eksik veritabanı yapılandırmasını veya fallback yayın mekanizmasını uygulamak.
 - [ ] Canlı yönetici değişikliğinin homepage ve whitepaper’a kalıcı yansımasını uçtan uca doğrulamak.
+- [ ] Vercel ortam değişkenleri, MySQL/Blob kalıcılık tercihi ve `glory.save` yayın API’sini uçtan uca denetlemek.
+- [ ] Yönetici giriş bilgisi doğrulaması, rol yetkisi, güvenli oturum çerezi ve logout akışını yeniden denetlemek.
+- [ ] Denetim bulgularını belgeleyip gerekli güvenlik veya kalıcılık düzeltmelerini uygulamak.
+- [x] Veritabanı/Blob kalıcılık ve yönetici oturum açma akışının canlı/yerel denetim bulgularını belgelemek.
+- [x] Yönetici girişine başarısız deneme sınırı eklemek ve unit test ile güvenceye almak.
 - [x] GitHub token’ının bağlı olduğu hesabı depo sahibiyle karşılaştırmak ve yazma yetkisi uyuşmazlığını gidermek.
 - [x] Kullanıcı için güvenli GitHub yetkilendirme akışını başlatmak ve bağlantı sonucunu doğrulamak.
 - [x] Bağlı GitHub deposunu, hedef branch’i ve mevcut dosya durumunu doğrulamak.
