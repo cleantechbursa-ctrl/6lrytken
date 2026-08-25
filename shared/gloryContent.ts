@@ -3,7 +3,22 @@ import { z } from "zod";
 
 const shortText = z.string().trim().min(1).max(240);
 const paragraph = z.string().trim().min(1).max(1_600);
-const optionalUrl = z.union([z.literal(""), z.string().url().max(2_000)]);
+const optionalUrl = z.union([z.literal(""), z.string().trim().url().max(2_000)]);
+
+function optionalOfficialUrl(domains: readonly string[]) {
+  return z.union([
+    z.literal(""),
+    z.string().trim().url().max(2_000).refine((value) => {
+      const parsed = new URL(value);
+      const hostname = parsed.hostname.toLowerCase().replace(/^www\./, "");
+      return parsed.protocol === "https:" && domains.includes(hostname);
+    }, "Use an official HTTPS platform URL."),
+  ]);
+}
+
+const optionalXUrl = optionalOfficialUrl(["x.com", "twitter.com"]);
+const optionalTelegramUrl = optionalOfficialUrl(["t.me", "telegram.me"]);
+const optionalDiscordUrl = optionalOfficialUrl(["discord.gg", "discord.com"]);
 
 const allocationSchema = z.object({
   label: shortText,
@@ -62,7 +77,7 @@ export const gloryContentSchema = z.object({
   tokenomics: z.object({ title: shortText, body: paragraph, allocations: z.array(allocationSchema).min(1).max(12) }),
   transparency: z.object({ title: shortText, body: paragraph, items: z.array(z.object({ title: shortText, body: paragraph })).min(1).max(6) }),
   roadmap: z.object({ title: shortText, body: paragraph, phases: z.array(roadmapSchema).min(1).max(8) }),
-  community: z.object({ title: shortText, body: paragraph, xUrl: optionalUrl, telegramUrl: optionalUrl, discordUrl: optionalUrl }),
+  community: z.object({ title: shortText, body: paragraph, xUrl: optionalXUrl, telegramUrl: optionalTelegramUrl, discordUrl: optionalDiscordUrl }),
   whitepaper: z.object({ version: shortText, title: shortText, lead: paragraph, pdfUrl: optionalUrl, chapters: z.array(chapterSchema).length(13) }),
 });
 
