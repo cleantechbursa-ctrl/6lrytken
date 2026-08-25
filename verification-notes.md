@@ -49,3 +49,14 @@ Public source: [BscScan contract page](https://bscscan.com/address/0xC7717427b4f
 - The Vercel-ready GLORY source tree was synchronized to `cleantechbursa-ctrl/6lrytken` on GitHub `main` through the authenticated GitHub API. The remote repository now exposes the `api`, `client`, `server`, `shared`, `vercel.json`, `VERCEL_SETUP.md`, package and migration files; commit `53c68b46c64588bd8add52d1998a84dcde956e0b` created the full project tree.
 - The connected Vercel domain `https://glorytoken.vercel.app/` was checked after synchronization and returned the complete GLORY homepage with the expected title, public route content, externally reachable GLORY images, contract controls and whitepaper navigation. The previously reported external-domain availability issue is resolved for the homepage.
 - Direct Vercel deep-link checks also passed for `/whitepaper`, which rendered the GLORY Whitepaper title and all thirteen published sections, and `/admin`, which rendered the protected GLORY Control Room sign-in form rather than a Vercel 404 or deployment error.
+
+## GitHub Kaynak Ağacı Yayın Öncesi Denetimi
+
+**Checked:** 25 August 2026
+
+- GitHub repository `cleantechbursa-ctrl/6lrytken`, branch `main`, latest commit `ecedff1f3a2669d1e12fb2c63e1bdcec0d223cf9` (`Audit GitHub source tree before GLORY launch`) contains 154 blob files.
+- The 153 locally tracked project files were compared against the GitHub tree by blob SHA. All 153 matched exactly; no local tracked source file was missing from GitHub and no content mismatch remained after synchronization.
+- The one GitHub-only file, `client/public/__manus__/version.json`, is generated Manus deployment metadata and is intentionally ignored in the local project. It is present in the remote source tree and does not represent a missing application source file.
+- Critical launch files were all present remotely: `package.json`, `pnpm-lock.yaml`, `client/index.html`, `client/src/App.tsx`, `client/src/pages/Home.tsx`, `server/db.ts`, `server/routers.ts`, `api/[...path].ts`, `api/trpc/[...trpc].ts`, `vercel.json`, `VERCEL_SETUP.md`, `todo.md`, `persistence-session-audit.md` and `verification-notes.md`.
+- Local `pnpm test`, `pnpm check` and `pnpm build` passed. The build produced `dist/public` and the server bundle required by the committed Vercel configuration.
+- Vercel Production deployment `dpl_GuZTDYRurs1Rj5NDTtCznoy3LUGT` reached `READY` and reported the same GitHub SHA `ecedff1f3a2669d1e12fb2c63e1bdcec0d223cf9`. The live `/`, `/whitepaper`, `/6lory` and `/admin` routes rendered successfully; the Vercel runtime error query returned no errors for the previous 24 hours.
