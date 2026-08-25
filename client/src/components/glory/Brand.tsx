@@ -1,5 +1,5 @@
 /** GLORY — Altın Eşik: restrained GLORY Gold on an obsidian foundation. */
-import { type ReactNode, useState } from "react";
+import React, { type ReactNode, useState } from "react";
 import { Check, Copy, ExternalLink } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
