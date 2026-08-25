@@ -13,9 +13,10 @@
 - [x] Canlı `glorytoken.vercel.app` domaininde desktop ve mobil görsel doğrulama ile sol üst logonun görünürlüğünü kayıt altına almak.
 - [x] Canlı mobil menü tetikleyicisi ve ana CTA dokunma hedeflerini etkileşimli olarak kontrol edip sonucu belgelemek.
 - [x] Header resmi wordmark yüklenirken boş marka kutusu görünmesini engelleyen anlık görünür fallback’i uygulamak ve doğrulamak.
-- [ ] GitHub `main` ile Vercel Production commit/deployment eşleşmesini ve kaynak dosya bütünlüğünü yeniden doğrulamak.
-- [ ] Canlı public rotalarda tüm logo ve görsel isteklerini HTTP ve render düzeyinde denetleyerek kırık varlıkları düzeltmek.
-- [ ] Canlı desktop ve mobilde ana sayfa, whitepaper ve 6lory görsel kalitesini son turdan geçirip kalan tasarım sorunlarını gidermek.
+- [x] GitHub `main` ile Vercel Production commit/deployment eşleşmesini ve kaynak dosya bütünlüğünü yeniden doğrulamak.
+- [x] Canlı public rotalarda tüm logo ve görsel isteklerini HTTP ve render düzeyinde denetleyerek kırık varlıkları düzeltmek.
+- [x] Canlı desktop ve mobilde ana sayfa, whitepaper ve 6lory görsel kalitesini son turdan geçirip kalan tasarım sorunlarını gidermek.
+- [x] Canlı Vercel Production’da `/whitepaper` ve `/6lory` rotalarını desktop/mobil screenshot ile doğrulayıp rota bazlı logo/görsel kayıtlarını tamamlamak.
 - [ ] Kullanıcının verdiği yetkiyle canlı Manus/Vercel yüzeylerindeki varlık farklarını doğrudan gidermek ve üretim görünümünü tek kaynakta sabitlemek.
 - [x] Ana sayfa hero/header bileşenlerini masaüstü ve mobilde taşma, kontrast ve hiyerarşi açısından yeniden doğrulamak.
 - [x] Düzeltmeleri production build, canlı Vercel görünümü ve GitHub `main` senkronizasyonu ile tamamlamak.
