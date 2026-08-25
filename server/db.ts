@@ -48,6 +48,7 @@ async function saveGloryContentToBlob(content: GloryContent, updatedBy: number) 
   await putBlob(GLORY_CONTENT_BLOB_PATH, JSON.stringify(record), {
     access: "private",
     addRandomSuffix: false,
+    allowOverwrite: true,
     cacheControlMaxAge: 0,
     contentType: "application/json; charset=utf-8",
   });
