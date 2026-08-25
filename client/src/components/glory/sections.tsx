@@ -1,5 +1,5 @@
 /** GLORY — Altın Eşik: ecosystem content through material depth, clear claims and threshold motifs. */
-import { type ReactNode, useState } from "react";
+import React, { type ReactNode, useState } from "react";
 import { Link } from "wouter";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, BadgeCheck, Blocks, ChevronRight, CircleDotDashed, DatabaseZap, Eye, Fingerprint, LockKeyhole, Network, ShieldCheck, UsersRound, WalletCards } from "lucide-react";
