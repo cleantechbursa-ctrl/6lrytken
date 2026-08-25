@@ -7,9 +7,11 @@
 - [x] Tamamlanan GLORY tasarım güncellemesini GitHub `main` branch’ine aktararak Vercel kaynak ağacını yenilemek.
 - [x] Canlı ana sayfadaki üst-sol marka alanı kırpılmasını masaüstü ve mobilde yeniden üretip kök nedenini belirlemek.
 - [x] Üst-sol resmi GLORY logosunu kırpmasız, erişilebilir ve tüm header genişliklerinde sabit bir yerleşimle düzeltmek.
-- [ ] Kullanıcının bildirdiği sol üst logo görünürlük sorununu güncel canlı desktop/mobil görünümde yeniden üretmek ve düzeltmek.
-- [ ] Ana sayfa, whitepaper, 6lory ve Control Room’un mevcut desktop/mobil görsel kalitesini yeniden denetleyip yalnızca tespit edilen sorunları gidermek.
-- [ ] Ana sayfa, whitepaper, 6lory ve Control Room’u mobil tam sayfa denetiminden geçirerek logo, içerik görselleri, taşma ve dokunma alanlarını doğrulamak.
+- [x] Kullanıcının bildirdiği sol üst logo görünürlük sorununu güncel canlı desktop/mobil görünümde yeniden üretmek ve düzeltmek.
+- [x] Ana sayfa, whitepaper, 6lory ve Control Room’un mevcut desktop/mobil görsel kalitesini yeniden denetleyip yalnızca tespit edilen sorunları gidermek.
+- [x] Ana sayfa, whitepaper, 6lory ve Control Room’u mobil tam sayfa denetiminden geçirerek logo, içerik görselleri, taşma ve dokunma alanlarını doğrulamak.
+- [x] Canlı `glorytoken.vercel.app` domaininde desktop ve mobil görsel doğrulama ile sol üst logonun görünürlüğünü kayıt altına almak.
+- [x] Canlı mobil menü tetikleyicisi ve ana CTA dokunma hedeflerini etkileşimli olarak kontrol edip sonucu belgelemek.
 - [x] Ana sayfa hero/header bileşenlerini masaüstü ve mobilde taşma, kontrast ve hiyerarşi açısından yeniden doğrulamak.
 - [x] Düzeltmeleri production build, canlı Vercel görünümü ve GitHub `main` senkronizasyonu ile tamamlamak.
 - [x] Canlı `/admin` yönetici girişinde kimlik bilgilerinin reddedilmesini yeniden üretmek ve ortam bazında ayırmak.
