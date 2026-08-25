@@ -7,6 +7,9 @@
 - [x] Tamamlanan GLORY tasarım güncellemesini GitHub `main` branch’ine aktararak Vercel kaynak ağacını yenilemek.
 - [x] Canlı ana sayfadaki üst-sol marka alanı kırpılmasını masaüstü ve mobilde yeniden üretip kök nedenini belirlemek.
 - [x] Üst-sol resmi GLORY logosunu kırpmasız, erişilebilir ve tüm header genişliklerinde sabit bir yerleşimle düzeltmek.
+- [ ] Kullanıcının bildirdiği sol üst logo görünürlük sorununu güncel canlı desktop/mobil görünümde yeniden üretmek ve düzeltmek.
+- [ ] Ana sayfa, whitepaper, 6lory ve Control Room’un mevcut desktop/mobil görsel kalitesini yeniden denetleyip yalnızca tespit edilen sorunları gidermek.
+- [ ] Ana sayfa, whitepaper, 6lory ve Control Room’u mobil tam sayfa denetiminden geçirerek logo, içerik görselleri, taşma ve dokunma alanlarını doğrulamak.
 - [x] Ana sayfa hero/header bileşenlerini masaüstü ve mobilde taşma, kontrast ve hiyerarşi açısından yeniden doğrulamak.
 - [x] Düzeltmeleri production build, canlı Vercel görünümü ve GitHub `main` senkronizasyonu ile tamamlamak.
 - [x] Canlı `/admin` yönetici girişinde kimlik bilgilerinin reddedilmesini yeniden üretmek ve ortam bazında ayırmak.
@@ -21,6 +24,7 @@
 - [x] Yönetici giriş bilgisi doğrulaması, rol yetkisi, güvenli oturum çerezi ve logout akışını yeniden denetlemek.
 - [x] Denetim bulgularını belgeleyip yönetici girişine başarısız deneme sınırı eklemek.
 - [ ] Vercel `BLOB_READ_WRITE_TOKEN` eklendiğinde canlı `SAVE & PUBLISH` kalıcılığını homepage ve whitepaper üzerinde uçtan uca doğrulamak.
+- [ ] Vercel OAuth bağlantısının mevcut araç kapsamıyla Blob token’ını Production ortamına ekleyebileceği onaysız yolu doğrulamak ve gizli-değer maskelemesini geri kapatmak.
 - [x] Veritabanı/Blob kalıcılık ve yönetici oturum açma akışının canlı/yerel denetim bulgularını belgelemek.
 - [x] Yönetici girişine başarısız deneme sınırı eklemek ve unit test ile güvenceye almak.
 - [x] GitHub token’ının bağlı olduğu hesabı depo sahibiyle karşılaştırmak ve yazma yetkisi uyuşmazlığını gidermek.
@@ -66,3 +70,5 @@
 - [x] Navbar ve footer’daki tüm birincil linkleri tek final turda link bazında route/hash sonucu ile kaydetmek; iki Whitepaper bağlantısını açıkça doğrulamak.
 - [x] `/`, `/whitepaper` ve `/admin` rotalarında görünen title/meta davranışını doğrulamak ve notlara kaydetmek.
 - [x] Mevcut uygulamanın route-bazlı metadata yaklaşımını koddan doğrulamak; gerekli route-meta çözümü eklendi ve test edildi.
+- [ ] Kullanıcının yetkilendirmesiyle Vercel Blob deposunu `glorytoken` projesine güvenli yazma token’ı ile bağlamak.
+- [ ] Bağlı Blob depolaması üzerinden canlı `SAVE & PUBLISH` kalıcılığını ana sayfa ve whitepaper’da geri dönüşümlü kontrol işaretiyle doğrulamak.

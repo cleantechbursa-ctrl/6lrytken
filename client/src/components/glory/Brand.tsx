@@ -1,5 +1,5 @@
 /** GLORY — Altın Eşik: restrained GLORY Gold on an obsidian foundation. */
-import { type ReactNode } from "react";
+import { type ReactNode, useState } from "react";
 import { Check, Copy, ExternalLink } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -13,10 +13,27 @@ export const OFFICIAL_GLORY_WORDMARK_SRC = gloryAsset("glory-header-lockup-wide_
 
 export function BrandMark({ compact = false, className = "" }: BrandMarkProps) {
   const content = useGloryContent();
+  const [wordmarkLoadFailed, setWordmarkLoadFailed] = useState(false);
   return (
     <div className={`glory-brand-lockup ${compact ? "glory-brand-lockup-compact" : ""} ${className}`} aria-label={content.brand.name}>
       <span className="glory-official-wordmark">
-        <img src={OFFICIAL_GLORY_WORDMARK_SRC} alt={`${content.brand.name} — ${content.brand.tagline}`} />
+        {wordmarkLoadFailed ? (
+          <span className="glory-wordmark-fallback" aria-label={`${content.brand.name} — ${content.brand.tagline}`}>
+            <strong>{content.brand.name}</strong>
+            <small>{content.brand.tagline}</small>
+          </span>
+        ) : (
+          <img
+            src={OFFICIAL_GLORY_WORDMARK_SRC}
+            alt={`${content.brand.name} — ${content.brand.tagline}`}
+            width={168}
+            height={42}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            onError={() => setWordmarkLoadFailed(true)}
+          />
+        )}
       </span>
     </div>
   );
