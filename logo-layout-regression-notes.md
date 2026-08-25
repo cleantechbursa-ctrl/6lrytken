@@ -29,3 +29,9 @@ The canonical production `/admin` route was also checked at 390 × 844 while una
 An additional canonical-production interaction check verifies the mobile header behavior after React hydration. The official wordmark reports a loaded image, the menu trigger changes to its expanded state, seven mobile navigation links become available, and the hero CTA targets are each at least 44px tall. This establishes both visual and interactive mobile evidence for the public surface.
 
 The development capture process also revealed that an image can remain unresolved momentarily after the header container paints. The shared brand component now renders a compact GLORY text lockup beneath the official image until the image load event completes; the official asset then fades in over it. If the image fails entirely, that same lockup remains visible. The regression test, TypeScript check, production build, 1440px desktop preview and 390px mobile preview all passed after this change.
+
+## Cross-domain production comparison — 2026-08-25
+
+Independent 1440 × 900 Chromium captures of the canonical Vercel domain and the Manus production domain render the same complete official GLORY lockup and gold/obsidian hero prism composition. Both show the upper-left logo, the desktop navigation, the two hero actions and the GLRY specification card. The Manus surface adds its own platform badge, but neither live surface has a missing logo or hero image in the tested render.
+
+The corresponding 390 × 844 mobile captures also match in the relevant public header and hero region: the complete official logo is visible in the upper left, the menu trigger is visible in the upper right, CTA targets are full width, and the lower hero prism image begins without clipping. The Manus badge overlays only its own platform surface and does not obscure the GLORY navigation or primary CTA content.
