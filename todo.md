@@ -11,13 +11,16 @@
 - [x] Düzeltmeleri production build, canlı Vercel görünümü ve GitHub `main` senkronizasyonu ile tamamlamak.
 - [x] Canlı `/admin` yönetici girişinde kimlik bilgilerinin reddedilmesini yeniden üretmek ve ortam bazında ayırmak.
 - [x] GLORY yönetici sırlarını, sunucusuz giriş endpointini ve güvenli oturum çerezi akışını doğrulayarak hatayı düzeltmek.
-- [ ] Vercel `DATABASE_URL` eklendikten sonra canlı yönetici oturumunda `SAVE & PUBLISH` kalıcılığını ve logout akışını doğrulamak.
-- [ ] Canlı Control Room `SAVE & PUBLISH` isteğinin hata yanıtını ve public içerik yansımasını yeniden üretmek.
-- [ ] Vercel yayın kalıcılığı için eksik veritabanı yapılandırmasını veya fallback yayın mekanizmasını uygulamak.
+- [x] Vercel `DATABASE_URL` olmadan çalışacak Blob fallback tasarımını eklemek; canlı kalıcılık doğrulaması yazma token’ı eklendikten sonra yapılacak.
+- [x] Canlı Control Room `SAVE & PUBLISH` isteğinin hata yanıtını ve public içerik yansımasını yeniden üretmek.
+- [x] Başarısız canlı `SAVE & PUBLISH` denemesinden sonra homepage ve `/whitepaper` üzerinde public içeriğin değişmeden kaldığını route düzeyinde doğrulamak.
+- [x] `glory.get` API çıktısını homepage ve `/whitepaper` render’ıyla eşleştirerek mevcut yayın yansıması davranışını belgelemek.
+- [x] Vercel yayın kalıcılığı için Blob fallback mekanizmasını uygulamak; üretim yazma belirteci ayrı altyapı adımı olarak kaldı.
 - [ ] Canlı yönetici değişikliğinin homepage ve whitepaper’a kalıcı yansımasını uçtan uca doğrulamak.
-- [ ] Vercel ortam değişkenleri, MySQL/Blob kalıcılık tercihi ve `glory.save` yayın API’sini uçtan uca denetlemek.
-- [ ] Yönetici giriş bilgisi doğrulaması, rol yetkisi, güvenli oturum çerezi ve logout akışını yeniden denetlemek.
-- [ ] Denetim bulgularını belgeleyip gerekli güvenlik veya kalıcılık düzeltmelerini uygulamak.
+- [x] Vercel ortam değişkenleri, MySQL/Blob kalıcılık tercihi ve `glory.save` yayın API’sini uçtan uca denetlemek.
+- [x] Yönetici giriş bilgisi doğrulaması, rol yetkisi, güvenli oturum çerezi ve logout akışını yeniden denetlemek.
+- [x] Denetim bulgularını belgeleyip yönetici girişine başarısız deneme sınırı eklemek.
+- [ ] Vercel `BLOB_READ_WRITE_TOKEN` eklendiğinde canlı `SAVE & PUBLISH` kalıcılığını homepage ve whitepaper üzerinde uçtan uca doğrulamak.
 - [x] Veritabanı/Blob kalıcılık ve yönetici oturum açma akışının canlı/yerel denetim bulgularını belgelemek.
 - [x] Yönetici girişine başarısız deneme sınırı eklemek ve unit test ile güvenceye almak.
 - [x] GitHub token’ının bağlı olduğu hesabı depo sahibiyle karşılaştırmak ve yazma yetkisi uyuşmazlığını gidermek.

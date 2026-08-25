@@ -31,4 +31,10 @@ Ek olarak, aynı istemci tanımlayıcısından beş başarısız giriş denemesi
 
 ## Doğrulama
 
-Yedi Vitest dosyasında sekiz test başarıyla geçti; TypeScript denetimi ve Vercel-uyumlu production build başarılı. Canlı üretim denetiminde giriş, public content okuması ve logout çalıştı; publish isteği ise beklenen biçimde depolama yapılandırması eksik hatası döndürdü.
+Yedi Vitest dosyasında sekiz test başarıyla geçti; TypeScript denetimi ve Vercel-uyumlu production build başarılı. Son canlı denetimde hatalı parola HTTP 401 döndürdü; hemen sonraki doğru giriş HTTP 200 ile kabul edildi. Oturum çerezi HTTP-only, Secure ve `SameSite=Lax` özellikleriyle oluşturuldu. Logout HTTP 200 döndürerek bu çerezi temizledi.
+
+Public içerik okuması da HTTP 200 ile çalıştı. Aynı içerik değişmeden tekrar yayımlanmak istendiğinde `glory.save` HTTP 500 döndürdü ve nedenin yalnızca eksik Vercel Blob yazma belirteci olduğu doğrulandı. Bu, yönetici değişikliklerinin sessizce kaybolmasını engeller; `BLOB_READ_WRITE_TOKEN` eklendiğinde aynı uçtan uca test yeniden çalıştırılmalıdır.
+
+Canlı route karşılaştırmasında `glory.get` API’sinin döndürdüğü varsayılan marka tagline’ı (**BUILD. EARN. BELONG.**), hero metni ve ekosistem açıklaması hem homepage’te hem de `/whitepaper` rotasında göründü. Başarısız publish isteğinden sonra iki rota da aynı varsayılan managed content’i göstermeye devam ediyor; bu nedenle mevcut hata bir render/cache hatası değil, salt yazma kalıcılığı eksikliğidir.
+
+Whitepaper eşleştirmesi canlı API’den bölüm alanları seçilerek ayrıca tamamlandı: API’deki **01 Executive Summary**, **02 The GLORY Vision** ve **05 Tokenomics** başlık/gövde metinleri canlı `/whitepaper` rotasındaki aynı bölümlerle birebir örtüşüyor. Böylece homepage ve whitepaper’ın public render’ının tek bir `glory.get` managed-content payload’ından beslendiği ve başarısız kaydın bu payload’ı değiştirmediği doğrulandı.
