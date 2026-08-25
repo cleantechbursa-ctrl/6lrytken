@@ -93,9 +93,9 @@
 
 ## Yayın Öncesi GitHub Kontrolü — 25 Ağustos 2026
 
-- [ ] GitHub `main` dosya ağacını yerel proje ile karşılaştırmak ve eksik dosya/klasörleri tespit etmek.
-- [ ] GitHub `main` üzerinde `package.json`, `vercel.json`, giriş dosyaları, serverless API ve SPA fallback yapılandırmasını denetlemek.
-- [ ] Yerel test, TypeScript ve production build kontrollerini yeniden çalıştırmak.
-- [ ] GitHub commit SHA’sını Vercel Production deployment ile eşleştirmek ve canlı `/`, `/whitepaper`, `/6lory` ve `/admin` rotalarını kontrol etmek.
-- [ ] Tespit edilen farkları GitHub `main`e senkronize etmek ve son yayın öncesi dosya bütünlüğünü belgelemek.
+- [x] GitHub `main` dosya ağacını yerel proje ile karşılaştırmak ve eksik dosya/klasörleri tespit etmek.
+- [x] GitHub `main` üzerinde `package.json`, `vercel.json`, giriş dosyaları, serverless API ve SPA fallback yapılandırmasını denetlemek.
+- [x] Yerel test, TypeScript ve production build kontrollerini yeniden çalıştırmak.
+- [x] GitHub commit SHA’sını Vercel Production deployment ile eşleştirmek ve canlı `/`, `/whitepaper`, `/6lory` ve `/admin` rotalarını kontrol etmek.
+- [x] Tespit edilen farkları GitHub `main`e senkronize etmek ve son yayın öncesi dosya bütünlüğünü belgelemek.
 - [ ] GitHub yayın öncesi denetim sonucunu yeni checkpoint ile kaydetmek.
